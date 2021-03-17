@@ -1,47 +1,47 @@
 import java.util.Scanner;
 import java.lang.Math;
-
+//æ³¨æ„ï¼šè¾“å‡ºè§’åº¦ä¸ºå¼§åº¦åˆ¶
 public class sol {
 	public static void main(String[] args) {
 		try {
-		//»ñÈ¡Êı¾İ	
+		//è·å–æ•°æ®	
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("ÇëÊäÈëË®Á÷µÄËÙ¶È£¨m/s£©");
+		System.out.println("è¯·è¾“å…¥æ°´æµçš„é€Ÿåº¦ï¼ˆm/sï¼‰");
 		double v1 = scan.nextDouble();
 
-		System.out.println("ÇëÊäÈëĞ¡´¬ÔÚ¾»Ë®ÖĞµÄËÙ¶È£¨m/s£©");
+		System.out.println("è¯·è¾“å…¥å°èˆ¹åœ¨å‡€æ°´ä¸­çš„é€Ÿåº¦ï¼ˆm/sï¼‰");
 		double v2 = scan.nextDouble();
 		
-		System.out.println("ÇëÊäÈëºÓµÄ¿í¶È");
+		System.out.println("è¯·è¾“å…¥æ²³çš„å®½åº¦");
 		double d = scan.nextDouble();
 		
 		scan.close();
-		//´´½¨´¬ºÍË®µÄ¶ÔÏó
+		//åˆ›å»ºèˆ¹å’Œæ°´çš„å¯¹è±¡
 		water water = new water(v1);
 		ship ship = new ship(v2);
-		//Êı¾İ´¦ÀíÍê±Ï£¬¿ªÊ¼½âÌâ
-		//¹ıºÓÊ±¼ä×î¶Ì
+		//æ•°æ®å¤„ç†å®Œæ¯•ï¼Œå¼€å§‹è§£é¢˜
+		//è¿‡æ²³æ—¶é—´æœ€çŸ­
 		double t = d / ship.v();
-		System.out.println("Ğ¡´¬µÄ×î¶Ì¹ıºÓÊ±¼äÎª"+t+"s");
-		//¹ıºÓÂ·³Ì×î¶Ì
+		System.out.println("å°èˆ¹çš„æœ€çŸ­è¿‡æ²³æ—¶é—´ä¸º"+t+"s");
+		//è¿‡æ²³è·¯ç¨‹æœ€çŸ­
 		if(ship.v() > water.v()) {
 			
 			double angle = Math.acos(water.v() / ship.v());
-			System.out.println("Ğ¡´¬ÓĞ×î¶ÌÂ·¾¶¹ıºÓÊ±£¬´¬Í·ÓÚÉÏºÓ°¶¼Ğ½ÇÎª"+angle+"¦Ğ£¬×î¶ÌĞĞ³ÌÎª"+d+"m");
+			System.out.println("å°èˆ¹æœ‰æœ€çŸ­è·¯å¾„è¿‡æ²³æ—¶ï¼Œèˆ¹å¤´äºä¸Šæ²³å²¸å¤¹è§’ä¸º"+angle+"Ï€ï¼Œæœ€çŸ­è¡Œç¨‹ä¸º"+d+"m");
 			
 		}else if (ship.v() < water.v()) {
 			
 			double angle = Math.acos(ship.v() / water.v());
 			double s = (water.v() * d ) / ship.v();
-			System.out.println("Ğ¡´¬ÓĞ×î¶ÌÂ·¾¶¹ıºÓÊ±£¬´¬Í·ÓÚÉÏºÓ°¶¼Ğ½ÇÎª"+angle+"¦Ğ£¬×î¶ÌĞĞ³ÌÎª"+s+"m");
+			System.out.println("å°èˆ¹æœ‰æœ€çŸ­è·¯å¾„è¿‡æ²³æ—¶ï¼Œèˆ¹å¤´äºä¸Šæ²³å²¸å¤¹è§’ä¸º"+angle+"Ï€ï¼Œæœ€çŸ­è¡Œç¨‹ä¸º"+s+"m");
 			
 		}else if (ship.v() == water.v()) {
-			System.out.println("ÎŞ×î¶ÌÂ·¾¶¹ıºÓ");
+			System.out.println("æ— æœ€çŸ­è·¯å¾„è¿‡æ²³");
 		}
 		
-		}catch(Exception e) {//Å×³öÊäÈëÒì³£
-			System.out.println("·¢Éú´íÎó£¬Çë¼ì²éÊäÈë");
+		}catch(Exception e) {//æŠ›å‡ºè¾“å…¥å¼‚å¸¸
+			System.out.println("å‘ç”Ÿé”™è¯¯ï¼Œè¯·æ£€æŸ¥è¾“å…¥");
 		}
 	}
 }
