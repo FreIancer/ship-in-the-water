@@ -32,7 +32,7 @@ public class Sol {
 			
 		}else if (ship.v() < water.v()) {
 			
-			double angle = Math.acos(ship.v() / water.v());
+			double angle = Math.PI - Math.acos(ship.v() / water.v());
 			
 			double s_s = (water.v() * d ) / ship.v();
 			
