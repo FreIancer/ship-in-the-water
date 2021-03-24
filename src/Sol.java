@@ -26,7 +26,7 @@ public class Sol {
 			
 			double angle = Math.acos(water.v() / ship.v());
 			
-			double t_s = d / Math.sqrt(ship.v()*ship.v() - water.v()* water.v());
+			double t_s = d / ship.v() * Math.sin(Math.acos(water.v() / ship.v()));
 			
 			System.out.println("小船有最短路径过河时，划行方向与水流方向成角"+angle+"π，最短行程为"+d+"m，过河时间为"+t_s+"s");
 			
@@ -36,7 +36,7 @@ public class Sol {
 			
 			double s_s = (water.v() * d ) / ship.v();
 			
-			double t_s = (water.v() / ship.v())* d / Math.sqrt(water.v()* water.v() -ship.v()*ship.v());
+			double t_s = s_s / water.v() * Math.cos(Math.asin(ship.v() / water.v()));
 			
 			System.out.println("小船有最短路径过河时，划行方向与水流方向成角"+angle+"π，最短行程为"+s_s+"m，过河时间为"+t_s+"s");
 			
